@@ -1,7 +1,8 @@
 import React from "react"
+import Layout from "../components/Layout/Layout"
 
 const excursions = () => {
-  return <div>Excursions page</div>
+  return <Layout>Excursions page</Layout>
 }
 
 export default excursions
