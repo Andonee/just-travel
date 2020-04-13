@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout/Layout"
 import MainCover from "../components/MainCover/MainCover"
 import Baner from "../components/Baner/Baner"
+import About from "../components/HomeComponents/About/About"
+import Services from "../components/HomeComponents/Services/Services"
 
 export default () => (
   <Layout>
@@ -16,5 +18,7 @@ export default () => (
         </Link>
       </Baner>
     </MainCover>
+    <About />
+    <Services />
   </Layout>
 )
