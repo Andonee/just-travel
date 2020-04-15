@@ -4,7 +4,7 @@ import { FaBars } from "react-icons/fa"
 import links from "../../../constants/links"
 import socialIcons from "../../../constants/social-media-links"
 import logo from "../../../images/logo.svg"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,7 +33,9 @@ const Navbar = () => {
           {links.map((item, index) => {
             return (
               <li key={index}>
-                <Link to={item.path}>{item.name}</Link>
+                <AniLink to={item.path} fade>
+                  {item.name}
+                </AniLink>
               </li>
             )
           })}

@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
 import styles from "../pages-css/error.module.css"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Baner from "../components/Baner/Baner"
 
 const error = () => {
@@ -9,9 +9,9 @@ const error = () => {
     <Layout>
       <header className={styles.error}>
         <Baner title="you chose poorly">
-          <Link to="/" className="btn-white">
+          <AniLink fade to="/" className="btn-white">
             Back to home page
-          </Link>
+          </AniLink>
         </Baner>
       </header>
     </Layout>
