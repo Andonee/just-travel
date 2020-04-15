@@ -1,14 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/Layout/Layout"
-import MainCover from "../components/MainCover/MainCover"
+import StyledMainCover from "../components/StyledMainCover/StyledMainCover"
 import Baner from "../components/Baner/Baner"
 import About from "../components/HomeComponents/About/About"
 import Services from "../components/HomeComponents/Services/Services"
+import { graphql } from "gatsby"
 
-export default () => (
+export default ({ data }) => (
   <Layout>
-    <MainCover>
+    <StyledMainCover
+      home="true"
+      img={data.defaultBackground.childImageSharp.fluid}
+    >
       <Baner
         title="Hit the road"
         content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum autem nisi adipisci!"
@@ -17,8 +21,21 @@ export default () => (
           Choose your
         </Link>
       </Baner>
-    </MainCover>
+    </StyledMainCover>
+
     <About />
     <Services />
   </Layout>
 )
+
+export const query = graphql`
+  query {
+    defaultBackground: file(relativePath: { eq: "hiking.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4160, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
