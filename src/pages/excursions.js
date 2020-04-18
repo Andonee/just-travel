@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout/Layout"
 import { graphql } from "gatsby"
 import StyledMainCover from "../components/StyledMainCover/StyledMainCover"
+import Tours from "../components/Tours/Tours/Tours"
 
 const excursions = props => {
   return (
@@ -9,6 +10,7 @@ const excursions = props => {
       <StyledMainCover
         img={props.data.defaultBackground.childImageSharp.fluid}
       />
+      <Tours />
     </Layout>
   )
 }
